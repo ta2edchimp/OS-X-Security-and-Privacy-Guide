@@ -83,23 +83,23 @@ There are several ways to install a fresh copy of OS X.
 
 The simplest way is to boot into [Recovery Mode](https://support.apple.com/en-us/HT201314) by holding `Command` and `R` keys at boot. A system image can be downloaded and applied directly from Apple. However, this way exposes the computer's serial number and other identifying information to Apple over plain **HTTP**.
 
-Another way is to download **OS X El Capitan 10.11.3** from the [App Store](https://itunes.apple.com/us/app/os-x-el-capitan/id1018109117) or some other place and create a custom, installable system image.
+Another way is to download **OS X El Capitan 10.11.4** from the [App Store](https://itunes.apple.com/us/app/os-x-el-capitan/id1018109117) or some other place and create a custom, installable system image.
 
 The application is [code signed](https://developer.apple.com/library/mac/documentation/Security/Conceptual/CodeSigningGuide/Procedures/Procedures.html#//apple_ref/doc/uid/TP40005929-CH4-SW6), which should be verified to make sure you received a legitimate copy.
 
     $ codesign -dvv /Applications/Install\ OS\ X\ El\ Capitan.app
-    Executable=/Applications/Install OS X El Capitan.app/Contents/MacOS/InstallAssistant
-    Identifier=com.apple.InstallAssistant.ElCapitan
-    Format=bundle with Mach-O thin (x86_64)
-    CodeDirectory v=20200 size=280 flags=0x200(kill) hashes=4+5 location=embedded
-    Signature size=4169
-    Authority=Apple Mac OS Application Signing
-    Authority=Apple Worldwide Developer Relations Certification Authority
-    Authority=Apple Root CA
-    Info.plist entries=31
-    TeamIdentifier=K36BKF7T3D
-    Sealed Resources version=2 rules=8 files=151
-    Internal requirements count=1 size=124
+	Executable=/Applications/Install OS X El Capitan.app/Contents/MacOS/InstallAssistant
+	Identifier=com.apple.InstallAssistant.ElCapitan
+	Format=app bundle with Mach-O thin (x86_64)
+	CodeDirectory v=20200 size=280 flags=0x200(kill) hashes=4+5 location=embedded
+	Signature size=4167
+	Authority=Apple Mac OS Application Signing
+	Authority=Apple Worldwide Developer Relations Certification Authority
+	Authority=Apple Root CA
+	Info.plist entries=31
+	TeamIdentifier=K36BKF7T3D
+	Sealed Resources version=2 rules=7 files=152
+	Internal requirements count=1 size=124
 
 OS X installers can be made with the `createinstallmedia` utility included in `Install OS X El Capitan.app/Contents/Resources/`. See [Create a bootable installer for OS X Yosemite](https://support.apple.com/en-us/HT201372), or run the utility without arguments to see how it works.
 
@@ -111,10 +111,10 @@ You can verify the following cryptographic hashes to ensure you have the same, a
 
 You can also Google these hashes to ensure your copy is genuine and has not been tampered with. See `InstallESD_Hashes.csv` in this repository for previous versions.
 
-    InstallESD.dmg (Build 15D21)
+    InstallESD.dmg (Build 15E65)
 
-    SHA-256:   bc46b9b02e69546e1446e131d4a8d3b0203a6bbad73a003749571da85f51a613
-    SHA-1:     e4311d93127d0668372b32e5342f3b455b6bc9bd
+    SHA-256:   532830b2a04b6f496b1cc1b18cc1645d1cda34151c212b68133f41c19d1431ed
+    SHA-1:     f6292573395b46e8110be6077fd4827409bc948b
 
 Mount and install the operating system to a **temporary image**, or use the GUI app [MagerValp/AutoDMG](https://github.com/MagerValp/AutoDMG).
 
@@ -610,7 +610,7 @@ Confirm outgoing dns traffic is encrypted:
     $ dig +short -x 77.66.84.233
     resolver2.dnscrypt.eu
 
-See also [What is a DNS leak and why should I care?](https://dnsleaktest.com/what-is-a-dns-leak.html) and the [mDNSResponder manual page](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/mDNSResponder.8.html).
+See also [What is a DNS leak and why should I care?](https://dnsleaktest.com/what-is-a-dns-leak.html) and the [mDNSResponder manual page](https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man8/mDNSResponder.8.html). Precise test: [ipv6-test.com](http://ipv6-test.com/).
 
 ## Captive portal
 
@@ -829,10 +829,10 @@ A popular OS X GUI client for XMPP and other chat protocols is [Adium](https://a
 
 Consider downloading the [beta version](https://beta.adium.im/) which uses OAuth2, making logging in to Google Talk/Hangouts [more](https://adium.im/blog/2015/04/) [secure](https://trac.adium.im/ticket/16161).
 
-    Adium_1.5.11b2.dmg
+    Adium_1.5.11b3.dmg
 
-    SHA-256: e7690718f14defa3bc08cd3949a4eab52e942abd47f7ac2ce7157ed7295658c6
-    SHA-1:   7f0271d4fe9835b4554225510e758a3c46c10b6a
+    SHA-256: 999e1931a52dc327b3a6e8492ffa9df724a837c88ad9637a501be2e3b6710078
+    SHA-1:   ca804389412f9aeb7971ade6812f33ac739140e6
 
 Remember to [disable logging](https://trac.adium.im/ticket/15722) for OTR chats with Adium.
 
@@ -1193,7 +1193,7 @@ Did you know Apple has not shipped a computer with TPM since [2006](http://osxbo
 
 *In no particular order*
 
-[OS X Yosemite Core Technologies Overview White Paper](https://www.apple.com/osx/pdf/OSXYosemite_TO_FF1.pdf)
+[OS X Core Technologies Overview White Paper](https://www.apple.com/osx/all-features/pdf/osx_elcapitan_core_technologies_overview.pdf)
 
 [Reverse Engineering Mac OS X blog](https://reverse.put.as/)
 
